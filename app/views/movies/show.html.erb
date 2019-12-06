@@ -1,29 +1,47 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag @movie.image.url(:medium)%>
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
-
-<p>
-  <strong>Movie length:</strong>
-  <%= @movie.movie_length %>
-</p>
-
-<p>
-  <strong>Director:</strong>
-  <%= @movie.director %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @movie.rating %>
-</p>
+<div class = "pannel pannel-default">
+    <div class= "pannel-body">
+      <div class= "row">
+        <div class="col-md-5">
+          <%= image_tag @movie.image.url(:medium) %>
+          <div class="table-resposible">
+            <table class = " table" >
+              <tbody>
+                <tr>
+                  <td><strong>Title: <%= @movie.title %></strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Description:</strong>
+                      <%= @movie.description %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Movie length:</strong>
+                    <%= @movie.movie_length %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                     <strong>Director:</strong>
+                      <%= @movie.director %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Rating:</strong>
+                    <%= @movie.rating %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
