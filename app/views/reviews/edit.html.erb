@@ -1,6 +1,22 @@
 <h1>Editing Review</h1>
+<%= form_for [@movie, @review], url: movie_review_path do |form| %>
+  
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
 
-<%= render 'form', review: @review %>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
 
-<%= link_to 'Show', @review %> |
-<%= link_to 'Back', reviews_path %>
+  <div class="actions">
+    <%= form.submit 'update' %>
+  </div>
+<% end %>
+<%=link_to "delete",movie_review_path(@review.movie_id,@review.id) , :confirm => 'Are you sure?', :method => :delete %>
+
+
+<%= link_to 'Show', "#" %> |
+<%= link_to 'Back', movie_path(:movie_id) %>
